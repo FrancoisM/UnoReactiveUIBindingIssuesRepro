@@ -6,9 +6,9 @@
     <ProjectGuid>{83CD46C1-E37D-40B4-A5AA-FDBB5CB31EAA}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>UnoReactiveUIBindingIssuesRepro.iOS.iOS</RootNamespace>
+    <RootNamespace>UnoReactiveUIBindingIssuesRepro.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>UnoReactiveUIBindingIssuesRepro.iOS.iOS</AssemblyName>
+    <AssemblyName>UnoReactiveUIBindingIssuesRepro.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Uno.UI">
-      <Version>1.28.1-dev.2183</Version>
+      <Version>1.31.0-dev.85</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems" Label="Shared" Condition="Exists('..\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems')" />

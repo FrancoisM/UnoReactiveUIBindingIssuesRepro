@@ -35,9 +35,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="1.29.1-aobfwasm.2700" />
-		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.17" />
+		<PackageReference Include="Uno.UI" Version="1.31.0-dev.85" />
+		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.23" />
 	</ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-serve" Version="0.1.0" />
+  </ItemGroup>
 
 	<Import Project="..\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems" Label="Shared" Condition="Exists('..\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems')" />
 

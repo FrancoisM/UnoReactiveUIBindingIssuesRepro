@@ -11,11 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoReactiveUIBindingIssuesR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoReactiveUIBindingIssuesRepro.UWP", "UnoReactiveUIBindingIssuesRepro\UnoReactiveUIBindingIssuesRepro.UWP\UnoReactiveUIBindingIssuesRepro.UWP.csproj", "{B6047994-30AB-4E75-AC2F-E154E8BC833D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoReactiveUIBindingIssuesRepro.Wasm", "UnoReactiveUIBindingIssuesRepro\UnoReactiveUIBindingIssuesRepro.Wasm\UnoReactiveUIBindingIssuesRepro.Wasm.csproj", "{0DF2B936-41FC-4B37-A250-4165BEF76FAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnoReactiveUIBindingIssuesRepro.Wasm", "UnoReactiveUIBindingIssuesRepro\UnoReactiveUIBindingIssuesRepro.Wasm\UnoReactiveUIBindingIssuesRepro.Wasm.csproj", "{0DF2B936-41FC-4B37-A250-4165BEF76FAC}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		UnoReactiveUIBindingIssuesRepro\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems*{4b9728b7-80f7-4ae9-841f-0222a302422c}*SharedItemsImports = 4
 		UnoReactiveUIBindingIssuesRepro\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		UnoReactiveUIBindingIssuesRepro\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems*{83cd46c1-e37d-40b4-a5aa-fdbb5cb31eaa}*SharedItemsImports = 4
+		UnoReactiveUIBindingIssuesRepro\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems*{b6047994-30ab-4e75-ac2f-e154e8bc833d}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
