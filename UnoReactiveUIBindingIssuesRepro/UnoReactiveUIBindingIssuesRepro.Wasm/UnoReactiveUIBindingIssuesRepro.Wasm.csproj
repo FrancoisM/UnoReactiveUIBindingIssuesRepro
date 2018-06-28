@@ -36,7 +36,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Uno.ReactiveUI" Version="8.0.0-uno.156" />
-		<PackageReference Include="Uno.UI" Version="1.31.0-dev.85" />
+		<PackageReference Include="Uno.UI" Version="1.31.0-dev.91" />
 		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.23" />
 	</ItemGroup>
 
