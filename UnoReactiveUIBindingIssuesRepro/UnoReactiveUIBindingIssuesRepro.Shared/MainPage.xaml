@@ -26,9 +26,9 @@
                 <Image Source="Assets/reload.png" HorizontalAlignment="Center" Width="24" Height="24"/>
             </Button>
         </Grid>
-        <Line Stroke="#FFE03352" X2="1" Grid.Row="1" Stretch="UniformToFill"/>
-        <ProgressRing x:Name="RefreshProgress" Width="50" Height="50" IsActive="True" Grid.Row="2" />
-        <ListView x:Name="ProductsList" Grid.Row="2">
+        <Border Background="#FFE03352" Grid.Row="1"/>
+        <ProgressRing Width="50" Height="50" IsActive="True" Grid.Row="2" Foreground="#FFE03352" Visibility="{Binding IsRefreshing}"/>
+        <ListView Grid.Row="2" ItemsSource="{Binding Products}" Visibility="{Binding IsRefreshing, Converter={StaticResource InvertBoolConverter}}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
