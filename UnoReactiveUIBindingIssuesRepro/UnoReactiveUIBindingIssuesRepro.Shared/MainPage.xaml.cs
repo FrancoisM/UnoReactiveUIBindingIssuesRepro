@@ -1,30 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Reactive.Disposables;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+using ReactiveUI;
+using UnoReactiveUIBindingIssuesRepro.ViewModels;
 
 namespace UnoReactiveUIBindingIssuesRepro
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage : IViewFor<IMainPageViewModel>
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+            this.WhenActivated(disposables =>
+            {
+                this.OneWayBind(
+                    ViewModel,
+                    x => x.IsRefreshing,
+                    x => x.RefreshProgress.Visibility,
+                    x => x ? Visibility.Visible : Visibility.Collapsed)
+                    .DisposeWith(disposables);
+                this.OneWayBind(
+                    ViewModel,
+                    x => x.IsRefreshing,
+                    x => x.ProductsList.Visibility,
+                    x => x ? Visibility.Collapsed : Visibility.Visible)
+                    .DisposeWith(disposables);
+                this.OneWayBind(
+                        ViewModel,
+                        x => x.Products,
+                        x => x.ProductsList.ItemsSource)
+                    .DisposeWith(disposables);
+            });
+        }
+
+        object IViewFor.ViewModel
+        {
+            get => ViewModel;
+            set => ViewModel = (IMainPageViewModel)value;
+        }
+
+        public IMainPageViewModel ViewModel { get; set; }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ViewModel = e.Parameter as IMainPageViewModel;
         }
     }
 }

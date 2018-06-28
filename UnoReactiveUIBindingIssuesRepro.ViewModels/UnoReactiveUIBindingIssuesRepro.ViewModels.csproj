@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;xamarinios10</TargetFrameworks>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+
+  <ItemGroup>
+    <PackageReference Include="MsBuild.Sdk.Extras" Version="1.5.4" PrivateAssets="All" />
+    <PackageReference Include="Uno.ReactiveUI" Version="8.0.0-uno.156" />
+  </ItemGroup>
+
+</Project>

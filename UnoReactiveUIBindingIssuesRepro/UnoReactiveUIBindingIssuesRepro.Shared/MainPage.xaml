@@ -1,13 +1,51 @@
-﻿<Page
+﻿<shared:BasePage
     x:Class="UnoReactiveUIBindingIssuesRepro.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnoReactiveUIBindingIssuesRepro"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:shared="using:UnoReactiveUIBindingIssuesRepro.Shared"
+    xmlns:vm="using:UnoReactiveUIBindingIssuesRepro.ViewModels"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance vm:IMainPageViewModel}">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock Text="Hello, world !" Margin="20" FontSize="30" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Test" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFE03352"/>
+            <Button Grid.Column="2" HorizontalAlignment="Right" Command="{Binding RefreshCommand}" Background="White">
+                <Image Source="Assets/reload.png" HorizontalAlignment="Center" Width="24" Height="24"/>
+            </Button>
+        </Grid>
+        <Line Stroke="#FFE03352" X2="1" Grid.Row="1" Stretch="UniformToFill"/>
+        <ProgressRing x:Name="RefreshProgress" Width="50" Height="50" IsActive="True" Grid.Row="2" />
+        <ListView x:Name="ProductsList" Grid.Row="2">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="vm:IProductCellViewModel">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Product, Mode=OneTime}" Grid.Column="0" />
+                        <TextBlock Text="{Binding Price, Mode=OneTime}" Grid.Column="1" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
-</Page>
+</shared:BasePage>

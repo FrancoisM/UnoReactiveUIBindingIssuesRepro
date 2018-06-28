@@ -98,9 +98,18 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Uno.ReactiveUI">
+      <Version>8.0.0-uno.156</Version>
+    </PackageReference>
     <PackageReference Include="Uno.UI">
       <Version>1.31.0-dev.85</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\UnoReactiveUIBindingIssuesRepro.ViewModels\UnoReactiveUIBindingIssuesRepro.ViewModels.csproj">
+      <Project>{4125561d-a0d7-4247-9ab3-c465a2bac9f1}</Project>
+      <Name>UnoReactiveUIBindingIssuesRepro.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems" Label="Shared" Condition="Exists('..\UnoReactiveUIBindingIssuesRepro.Shared\UnoReactiveUIBindingIssuesRepro.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
